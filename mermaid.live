@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant UA as User A
+    participant AA as KakaoTalk App (A)
+    participant S as KakaoTalk Server
+    participant AB as KakaoTalk App (B)
+    participant UB as User B
+
+    UA->>AA: 메시지 입력 및 전송 클릭
+    AA->>S: 메시지 전송 요청
+    S->>AB: 푸시 알림 전달
+    AB->>UB: 메시지 알림 표시
+    UB->>AB: 메시지 열람
+    AB->>S: 읽음 상태 전송
+    S->>AA: 읽음 상태 업데이트
